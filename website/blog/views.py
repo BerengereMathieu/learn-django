@@ -11,10 +11,10 @@ def post_list(request):
                   {'posts': posts})
 
 
-def post_detail(request, year, month, day, post):
+def post_detail(request, year, month, day, slug):
     """ display a single post"""
 
-    post = get_object_or_404(Post, slug=post,
+    post = get_object_or_404(Post, slug=slug,
                              status='published',
                              publish__year=year,
                              publish__month=month,
