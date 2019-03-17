@@ -20,7 +20,8 @@ class Post(models.Model):
 
     # link to author
     author = models.ForeignKey(User,
-                               related_name='blog_posts')
+                               related_name='blog_posts',
+                               on_delete=models.PROTECT)
 
     # article content
     body = models.TextField()
